@@ -6,7 +6,6 @@ import com.intellij.openapi.ui.Messages;
 import git4idea.branch.GitBrancher;
 import git4idea.repo.GitRepository;
 import git4idea.repo.GitRepositoryManager;
-import kotlin.reflect.KFunction;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
