@@ -35,23 +35,31 @@ public class Branchch extends AnAction {
         for (GitRepository repository : repositories) {
             String currentBranchName = repository.getCurrentBranch().getName();
             if (currentBranchName.startsWith("rc-")) {
-                String newBranchName = currentBranchName.substring(3) + "/bugfix/" + clipboardText;
-
-
-                GitBrancher brancher = GitBrancher.getInstance(project);
-                brancher.checkoutNewBranch(newBranchName, repositories);
+                String name = Messages.showInputDialog(
+                        "Enter branch name:",
+                        currentBranchName.substring(3) + "/bugfix/" + " <branch_name> " + "_" + clipboardText,
+                        Messages.getQuestionIcon());
+                if ((name != null) && (name.length() > 0)) {
+                    String newBranchName = currentBranchName.substring(3) + "/bugfix/" + name + "_" + clipboardText;
+                    GitBrancher brancher = GitBrancher.getInstance(project);
+                    brancher.checkoutNewBranch(newBranchName, repositories);
+                }
 
                 // fixme: тут возможно не всегда будет успевать гит создать ветку или упасть с ошибкой
-                ActionManager am = ActionManager.getInstance();
-                am.getAction("CheckinProject").actionPerformed(new AnActionEvent(null, DataManager.getInstance().getDataContext(),
-                        ActionPlaces.UNKNOWN, new Presentation(),
-                        ActionManager.getInstance(), 0));
+//                doCommitProject();
             }
         }
     }
 
     private String getFromClipboard() throws IOException, UnsupportedFlavorException {
         return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+    }
+
+    private void doCommitProject() {
+        ActionManager am = ActionManager.getInstance();
+        am.getAction("CheckinProject").actionPerformed(new AnActionEvent(null, DataManager.getInstance().getDataContext(),
+                ActionPlaces.UNKNOWN, new Presentation(),
+                ActionManager.getInstance(), 0));
     }
 
 }

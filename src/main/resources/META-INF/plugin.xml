@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>ten.branch_creator</id>
     <name>MyPlugin</name>
-    <!-- <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor> -->
+     <vendor email="" url="">Me</vendor>
 
      <description><![CDATA[
      ter short description for your plugin here.<br>
@@ -22,7 +22,10 @@
 
     <actions>
 
-        <action id="Branchch" class="Branchch" text="Branch Create Action" description="Branch create action">
+        <action id="BranchchB" class="Branchch" text="Branch Create Action" description="Branch create action">
+            <add-to-group group-id="ToolbarRunGroup" anchor="first" relative-to-action="Stop"/>
+        </action>
+        <action id="BranchchF" class="Branchch" text="Branch Create Action" description="Branch create action">
             <add-to-group group-id="ToolbarRunGroup" anchor="first" relative-to-action="Stop"/>
         </action>
     </actions>
