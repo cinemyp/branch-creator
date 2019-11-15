@@ -47,7 +47,7 @@ public class Branchch extends AnAction {
                 }
 
                 // fixme: тут возможно не всегда будет успевать гит создать ветку или упасть с ошибкой
-//                doCommitProject();
+                // doCommitProject();
             }
         }
     }

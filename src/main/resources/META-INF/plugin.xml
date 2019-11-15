@@ -4,8 +4,11 @@
      <vendor email="pashkun73@gmail.com" url="https://online.sbis.ru/person/aa838224-33cd-46ef-ae12-daacb0dc7041">Gubin Pavel</vendor>
 
      <description><![CDATA[
-     ter short description for your plugin here.<br>
-     <em>mot HTML tags may be used</em>
+     Add buttons to fast Create and Checkout branchs by tensorflow notation<br/>
+    <version>/<bugfix/feature>/<your_text>_<task_id>
+
+    version - from "rc-..." branch
+    task_id - from clipboard
      ]]></description>
 
      <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
