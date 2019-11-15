@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>ten.branch_creator</id>
-    <name>MyPlugin</name>
-     <vendor email="" url="">Me</vendor>
+    <name>Tensor Dev Branch Creator</name>
+     <vendor email="pashkun73@gmail.com" url="https://online.sbis.ru/person/aa838224-33cd-46ef-ae12-daacb0dc7041">Gubin Pavel</vendor>
 
      <description><![CDATA[
      ter short description for your plugin here.<br>
