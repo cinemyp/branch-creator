@@ -56,11 +56,11 @@ public class Branchch extends AnAction {
         return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
     }
 
-    private void doCommitProject() {
-        ActionManager am = ActionManager.getInstance();
-        am.getAction("CheckinProject").actionPerformed(new AnActionEvent(null, DataManager.getInstance().getDataContext(),
-                ActionPlaces.UNKNOWN, new Presentation(),
-                ActionManager.getInstance(), 0));
-    }
+//    private void doCommitProject() {
+//        ActionManager am = ActionManager.getInstance();
+//        am.getAction("CheckinProject").actionPerformed(new AnActionEvent(null, DataManager.getInstance().getDataContext(),
+//                ActionPlaces.UNKNOWN, new Presentation(),
+//                ActionManager.getInstance(), 0));
+//    }
 
 }
