@@ -21,26 +21,28 @@ public class Branchch extends AnAction {
     }
 
     public void actionPerformed(AnActionEvent event) {
-        String clipboardText = "";
+        String endOfBranch = "_";
         try {
-            clipboardText = getFromClipboard();
+            endOfBranch += getFromClipboard();
         } catch (IOException | UnsupportedFlavorException e) {
             e.printStackTrace();
         }
-
+        String typeOfBranch = event.getPresentation().getDescription();
         Project project = event.getProject();
-
         GitRepositoryManager gitRepositoryManager = GitRepositoryManager.getInstance(project);
         List<GitRepository> repositories = gitRepositoryManager.getRepositories();
+
         for (GitRepository repository : repositories) {
             String currentBranchName = repository.getCurrentBranch().getName();
+            String startOfBranch = currentBranchName.substring(3) + "/" + typeOfBranch + "/";
+
             if (currentBranchName.startsWith("rc-")) {
                 String name = Messages.showInputDialog(
                         "Enter branch name:",
-                        currentBranchName.substring(3) + "/bugfix/" + " <branch_name> " + "_" + clipboardText,
+                        startOfBranch + "<your_branch_name>" + endOfBranch,
                         Messages.getQuestionIcon());
-                if ((name != null) && (name.length() > 0)) {
-                    String newBranchName = currentBranchName.substring(3) + "/bugfix/" + name + "_" + clipboardText;
+                if (name != null) {
+                    String newBranchName = startOfBranch + name + endOfBranch;
                     GitBrancher brancher = GitBrancher.getInstance(project);
                     brancher.checkoutNewBranch(newBranchName, repositories);
                 }

@@ -21,11 +21,10 @@
     </extensions>
 
     <actions>
-
-        <action id="BranchchB" class="Branchch" text="Branch Create Action" description="Branch create action">
+        <action id="BranchchF" class="Branchch" text="Branch Create Action Feature" description="feature" icon="icons/f.png">
             <add-to-group group-id="ToolbarRunGroup" anchor="first" relative-to-action="Stop"/>
         </action>
-        <action id="BranchchF" class="Branchch" text="Branch Create Action" description="Branch create action">
+        <action id="BranchchB" class="Branchch" text="Branch Create Action Bugfix" description="bugfix" icon="icons/b.png">
             <add-to-group group-id="ToolbarRunGroup" anchor="first" relative-to-action="Stop"/>
         </action>
     </actions>
