@@ -1,4 +1,3 @@
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
@@ -16,13 +15,19 @@ import java.util.List;
 
 public class Branchch extends AnAction {
     public Branchch() {
-        super("Hello");
+        super();
     }
 
     public void actionPerformed(AnActionEvent event) {
         String endOfBranch = "_";
         try {
-            endOfBranch += getFromClipboard();
+            String clipboardText = getFromClipboard();
+            if (clipboardText.matches("^\\d+$")) {
+                endOfBranch += clipboardText;
+            } else {
+                Messages.showWarningDialog("Please, copy task id in clipboard", "Clipboard warning");
+                return;
+            }
         } catch (IOException | UnsupportedFlavorException e) {
             e.printStackTrace();
         }
@@ -45,9 +50,9 @@ public class Branchch extends AnAction {
                     GitBrancher brancher = GitBrancher.getInstance(project);
                     brancher.checkoutNewBranch(newBranchName, repositories);
                 }
-
-                // fixme: тут возможно не всегда будет успевать гит создать ветку или упасть с ошибкой
                 // doCommitProject();
+            } else {
+                Messages.showWarningDialog("Can't create from this branch.\nPlease, choose 'rc-...' branch ", "Branch Name Warning");
             }
         }
     }
@@ -56,6 +61,7 @@ public class Branchch extends AnAction {
         return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
     }
 
+// тут возможно не всегда будет успевать гит создать ветку или упасть с ошибкой
 //    private void doCommitProject() {
 //        ActionManager am = ActionManager.getInstance();
 //        am.getAction("CheckinProject").actionPerformed(new AnActionEvent(null, DataManager.getInstance().getDataContext(),

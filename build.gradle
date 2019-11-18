@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'ten'
-version '1.0.7'
+version '1.0.8'
 
 sourceCompatibility = 1.8
 
@@ -23,7 +23,8 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Update icons for buttons.
+      1.0.8 add error messages + rename tooltip/text action 
+      1.0.7 update icons for buttons.
       """
 }
 
