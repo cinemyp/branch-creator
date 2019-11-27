@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'ten'
-version '1.0.8'
+version '1.0.9'
 
 sourceCompatibility = 1.8
 
@@ -18,13 +18,11 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.2.4'
     plugins 'git4idea'
 }
 patchPluginXml {
     changeNotes """
-      1.0.8 add error messages + rename tooltip/text action 
-      1.0.7 update icons for buttons.
+      1.0.9 Changes plugin settings
       """
 }
 
