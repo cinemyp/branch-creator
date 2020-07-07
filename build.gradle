@@ -1,10 +1,10 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.13'
+    id 'org.jetbrains.intellij' version '0.4.17'
 }
 
 group 'ten'
-version '1.0.9'
+version '1.0.10'
 
 sourceCompatibility = 1.8
 
@@ -20,9 +20,12 @@ dependencies {
 intellij {
     plugins 'git4idea'
 }
+
 patchPluginXml {
+    sinceBuild "173.0"
+    untilBuild "210.*"
     changeNotes """
-      1.0.9 Changes plugin settings
+      1.0.10 Changes plugin settings
       """
 }
 
