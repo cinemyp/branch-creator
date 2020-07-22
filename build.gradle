@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'ten'
-version '1.1.0'
+version '1.1.1'
 
 sourceCompatibility = 1.8
 
@@ -27,7 +27,7 @@ patchPluginXml {
     sinceBuild "173.0"
     untilBuild "210.*"
     changeNotes """
-      1.1.0 Added new action. Now you can create Wasaby component + library from context menu
+      1.1.1 changed generated styles
       """
 }
 

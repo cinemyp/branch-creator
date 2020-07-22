@@ -278,11 +278,11 @@ public class ComponentCreator extends AnAction {
     }
 
     private String getContentWML() {
-        return "<div class=\"<ModuleName>_<LibraryName>_<ComponentName>\"></div>\n";
+        return "<div class=\"<LibraryName>_<ComponentName>\"></div>\n";
     }
 
     private String getContentLess() {
-        return ".<ModuleName>_<LibraryName>_<ComponentName> {\n}\n";
+        return ".<LibraryName>_<ComponentName> {\n}\n";
     }
 
 }
