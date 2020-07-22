@@ -4,9 +4,11 @@ plugins {
 }
 
 group 'ten'
-version '1.0.10'
+version '1.1.0'
 
 sourceCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
@@ -25,7 +27,7 @@ patchPluginXml {
     sinceBuild "173.0"
     untilBuild "210.*"
     changeNotes """
-      1.0.10 Changes plugin settings
+      1.1.0 Added new action. Now you can create Wasaby component + library from context menu
       """
 }
 

@@ -1,12 +1,13 @@
 <idea-plugin>
     <id>ten.branch_creator</id>
-    <name>Tensor Dev Branch Creator</name>
+    <name>Wasaby Developer Tools</name>
     <vendor email="pashkun73@gmail.com" url="https://online.sbis.ru/person/aa838224-33cd-46ef-ae12-daacb0dc7041">
         Gubin Pavel
     </vendor>
 
     <description><![CDATA[
-     Add buttons to fast Create and Checkout branchs by tensorflow notation<br/>
+     Added Added new action. Now you can create Wasaby component + library from context menu.<br/>
+     Added buttons to fast Create and Checkout branchs by tensorflow notation<br/>
     &lt;version&gt;/&lt;bugfix/feature&gt;/&lt;your_text&gt;_&lt;task_id&gt;<br/>
     <br/>
     version - from "rc-..." branch<br/>
@@ -28,6 +29,9 @@
         <action id="BranchchB" class="Branchch" text="Create Branch Bugfix" description="bugfix"
                 icon="icons/b.png">
             <add-to-group group-id="ToolbarRunGroup" anchor="first" relative-to-action="Stop"/>
+        </action>
+        <action id="ComponentCreator" class="ComponentCreator" text="Wasaby Component" icon="icons/wasaby.png">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewFile"/>
         </action>
     </actions>
 </idea-plugin>
