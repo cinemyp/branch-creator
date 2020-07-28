@@ -8,6 +8,7 @@ import git4idea.repo.GitRepositoryManager;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.List;
@@ -49,6 +50,8 @@ public class Branchch extends AnAction {
                     String newBranchName = startOfBranch + name + endOfBranch;
                     GitBrancher brancher = GitBrancher.getInstance(project);
                     brancher.checkoutNewBranch(newBranchName, repositories);
+                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(
+                            new StringSelection(newBranchName), null);
                 }
                 // doCommitProject();
             } else {

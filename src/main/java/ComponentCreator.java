@@ -177,6 +177,7 @@ public class ComponentCreator extends AnAction {
                         assert vfile != null;
                         String fileContent = FileUtil.loadTextAndClose(vfile.getInputStream());
                         fileContent = fileContent.concat(getAdditionalContentLibraryTSFile());
+                        fileContent = fileContent.replaceAll(" * @public", getAdditionalCommentLibraryTSFile() + " * @public");
                         OutputStream os = vfile.getOutputStream(null);
                         os.write(replacePlaceholders(fileContent, moduleName, finalLibraryName, finalComponentName).getBytes(StandardCharsets.UTF_8));
                         os.close();
@@ -228,6 +229,10 @@ public class ComponentCreator extends AnAction {
                 " */\n" +
                 "\n" +
                 "export {default as <ComponentName>} from '<ModuleName>/_<LibraryName>/<ComponentName>';\n";
+    }
+
+    private String getAdditionalCommentLibraryTSFile() {
+        return " @includes <ComponentName> <ModuleName>/_<LibraryName>/<ComponentName>\n";
     }
 
     private String getAdditionalContentLibraryTSFile() {

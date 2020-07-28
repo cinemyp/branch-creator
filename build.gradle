@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'ten'
-version '1.1.1'
+version '1.1.2'
 
 sourceCompatibility = 1.8
 
@@ -27,7 +27,9 @@ patchPluginXml {
     sinceBuild "173.0"
     untilBuild "210.*"
     changeNotes """
-      1.1.1 changed generated styles
+      1.1.2
+      Now new branch copied to clipboard.
+      Fix for @include
       """
 }
 
